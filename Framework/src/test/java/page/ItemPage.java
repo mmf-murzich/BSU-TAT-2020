@@ -2,6 +2,7 @@ package page;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -22,13 +23,16 @@ public class ItemPage extends AbstractPage {
     private WebElement goToCartButton;
 
     public ItemPage addToCart(){
-        new WebDriverWait(driver, Duration.ofSeconds(10).getSeconds())
-                .until(ExpectedConditions.elementToBeClickable(toCartButton));
-        toCartButton.click();
+        /*new WebDriverWait(driver, Duration.ofSeconds(10).getSeconds())
+                .until(ExpectedConditions.elementToBeClickable(toCartButton));*/
+        //toCartButton.click();
+        ((JavascriptExecutor) driver).executeScript("document.getElementsByClassName('ok-product__add-shcart ok-btn  -btn-shopping-cart ok-product__btn')[0].click();");
         driver.navigate().refresh();
         logger.info("Item is added to cart.");
         return this;
     }
+
+    // ((JavascriptExecutor) driver).executeScript("document.getElementById('atc-pickit-option').click();");
 
     public ItemPage(WebDriver driver){
         super(driver);

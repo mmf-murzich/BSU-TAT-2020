@@ -6,7 +6,7 @@ import org.testng.annotations.Test;
 import page.LandingPage;
 
 public class CartTest extends CommonConditions {
-    private final User userWithCorrectData = new User("mmf.test@gmail.com", "7777777");
+    private final User userWithCorrectData = new User("test@gmail.com", "123456");
     private final String itemCode = "Код: 8010276032089";
 
     @Test(description = "add to cart test")
@@ -39,5 +39,4 @@ public class CartTest extends CommonConditions {
                 .checkIfCartIsEmpty();
         Assert.assertTrue(cartIsEmpty);
     }
-
 }

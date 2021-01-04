@@ -165,3 +165,8 @@ public class LandingPage extends AbstractPage{
     }
 
 }
+
+// Element <button data-cart-btn="" class="ok-product__add-shcart ok-btn  -btn-shopping-cart ok-product__btn">...</button> is not clickable at point (1013, 615). Other element would receive the click: <jdiv class="hoverl_001b">...</jdiv>
+//  (Session info: chrome=87.0.4280.88)
+
+// /html/body/div[1]/div[1]/main/div/section/div/div[3]/div[3]/div[1]/div[2]/div/button
