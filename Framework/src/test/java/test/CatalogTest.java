@@ -10,7 +10,6 @@ import java.util.List;
 public class CatalogTest extends CommonConditions{
     private final String SEARCH_FIRST = "5";
     private final String SEARCH_SECOND = "7";
-    private final String STRING_MASSAGE = "Рекомендуем:";
 
     @Test(description = "test for searching in catalog using cost")
     public void searchInCatalogTest() {
@@ -32,6 +31,7 @@ public class CatalogTest extends CommonConditions{
         String actual = new CatalogPage(driver)
                 .openPage()
                 .searchNegative(SEARCH_SECOND, SEARCH_FIRST);
+        String STRING_MASSAGE = "Рекомендуем:";
         String expected = STRING_MASSAGE;
         Assert.assertEquals(actual, expected);
     }
